@@ -1,5 +1,5 @@
 <?php
-namespace project1\Kernel;
+namespace project1\kernel;
 
 use Symfony\Component\Dotenv\Dotenv;
 final class bootstrap
@@ -10,6 +10,10 @@ final class bootstrap
         $dotenv = new Dotenv();
         $this->loadEnvironmentVariables($dotenv);
         echo $_ENV["SITE_NAME"];
+    }
+    public function run(): void
+    {
+        $this->initialize();
     }
     private function initialize()
     {
