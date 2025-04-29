@@ -10,8 +10,11 @@ final class view
     private const PATH = __DIR__ . "/../../../templates/";
     private const FILE_EXTENSION = ".html.php";
 
-    public static function render(string $view, string $title, array $context)
-    {
+    public static function render(
+        string $view,
+        string $title,
+        array $context = []
+    ) {
         extract($context);
         require self::PATH . "_partials/header.inc.html.php";
         if (self::isViewExists($view)) {

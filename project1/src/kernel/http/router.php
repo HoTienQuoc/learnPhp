@@ -10,7 +10,7 @@ use ReflectionMethod;
 class router
 {
     private const CONTROLLER_NAMESPACE = "project1\controller\\";
-    private const SEPERATOR = "@";
+    private const SEPARATOR = "@";
 
     public const METHOD_GET = "GET";
     public const METHOD_POST = "POST";
@@ -36,15 +36,15 @@ class router
         // Execute logic
         $uri = "/" . trim($uri, "/");
         $url = !empty($_GET["uri"]) ? "/" . $_GET["uri"] : "/";
-
         if (preg_match("#^$uri$#", $url, $params)) {
             if (self::isController($method)) {
                 // Execute controller logic
                 header(sprintf("Location: %s/%s", $_ENV["SITE_URL"], $method));
             } elseif (self::isHttpMethodValid()) {
-                $split = explode(self::SEPERATOR, $method);
+                $split = explode(self::SEPARATOR, $method);
                 $className = self::CONTROLLER_NAMESPACE . $split[0];
                 $method = $split[1];
+
                 try {
                     $reflection = new ReflectionClass($className);
                     if (
@@ -83,13 +83,13 @@ class router
     private static function getActionParameters(array $params): array
     {
         foreach ($params as $key => $value) {
-            $params[$key] = str_replace("/", "", $params);
+            $params[$key] = str_replace("/", "", $value);
         }
         return $params;
     }
 
     private static function isController(string $method): bool
     {
-        return !str_contains($method, self::SEPERATOR);
+        return !str_contains($method, self::SEPARATOR);
     }
 }

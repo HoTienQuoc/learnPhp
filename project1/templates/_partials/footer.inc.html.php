@@ -1,5 +1,5 @@
 <footer>
-    <p>@GeeksforGeeks, Sanchhaya Education Private Limited, All rights reserved</p>
+    <p><a href="<?= site_url() ?>">GeeksforGeeks</a></p>
 </footer>
 </body>
 </html>
