@@ -13,7 +13,7 @@ final class view
     public static function render(string $view, string $title, array $context)
     {
         extract($context);
-        require self::PATH . "partials/header.inc.html.php";
+        require self::PATH . "_partials/header.inc.html.php";
         if (self::isViewExists($view)) {
             include_once self::PATH . $view . self::FILE_EXTENSION;
         } else {
@@ -24,7 +24,7 @@ final class view
                 )
             );
         }
-        require self::PATH . "partials/footer.inc.html.php";
+        require self::PATH . "_partials/footer.inc.html.php";
     }
 
     private static function isViewExists(string $fileName): bool
