@@ -9,11 +9,10 @@ final class bootstrap
     {
         $dotenv = new Dotenv();
         $this->loadEnvironmentVariables($dotenv);
-        echo $_ENV["SITE_NAME"];
     }
     public function run(): void
     {
-        $this->initialize();
+        require dirname(__DIR__, 1) . "/routes.php";
     }
     private function initialize()
     {
@@ -21,6 +20,6 @@ final class bootstrap
     }
     private function loadEnvironmentVariables(Dotenv $dotenv): void
     {
-        $dotenv->load(__DIR__ . "/.env");
+        $dotenv->load(dirname(__DIR__, 2) . "/.env");
     }
 }
