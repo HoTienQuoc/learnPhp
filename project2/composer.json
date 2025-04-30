@@ -1,0 +1,23 @@
+{
+  "name": "gokuquoc/project2",
+  "autoload": {
+    "psr-4": {
+      "Php8\\Project2\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "HoTienQuoc",
+      "email": "hotienquoc0429@gmail.com"
+    }
+  ],
+  "config": {
+    "platform": {
+      "php": "8.1.0"
+    }
+  },
+  "require": {
+    "php": ">=8.1.0",
+    "firebase/php-jwt": "^6.11"
+  }
+}
