@@ -15,6 +15,10 @@ class ComposerStaticInitac8b8eb7e5440f78b9fd83d4f66c0e36
     );
 
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'Whoops\\' => 7,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -31,6 +35,7 @@ class ComposerStaticInitac8b8eb7e5440f78b9fd83d4f66c0e36
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'PhpOption\\' => 10,
             'Php8\\Project2\\' => 14,
             'PH7\\PhpHttpResponseHeader\\' => 26,
@@ -55,6 +60,10 @@ class ComposerStaticInitac8b8eb7e5440f78b9fd83d4f66c0e36
     );
 
     public static $prefixDirsPsr4 = array (
+        'Whoops\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
+        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
@@ -86,6 +95,10 @@ class ComposerStaticInitac8b8eb7e5440f78b9fd83d4f66c0e36
         'Ramsey\\Collection\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/collection/src',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/src',
         ),
         'PhpOption\\' => 
         array (
